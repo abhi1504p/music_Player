@@ -1,0 +1,62 @@
+name: listen_music
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+  hydrated_bloc: ^9.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+  flutter_bloc:
+  path_provider:
+
+  flutter_lints:
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/fonts/
+    - assets/vector/
+
+fonts:
+  - family: Satoshi
+    fonts:
+           - asset: assets/fonts/Satoshi_Black.ttf
+              weight:900
+           - asset: assets/fonts/Satoshi_Bold.ttf
+              weight:600
+           - asset: assets/fonts/Satoshi_Medium.ttf
+               weight:500
+           - asset: assets/fonts/Satoshi_Regular.ttf
+               weight:400
+           - asset: assets/fonts/Satoshi_Light.ttf
+               weight:300
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
