@@ -3,7 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:listen_music/common/widgets/buttons/app_button.dart';
 import 'package:listen_music/core/configs/assets/app_images.dart';
 import 'package:listen_music/core/configs/assets/app_vector.dart';
-import 'package:listen_music/presentation/choose_mode/pages/choose_mode.dart';
+import 'package:listen_music/presentation/chooseMode/mode.dart';
+
 
 class getstartpage extends StatelessWidget {
   const getstartpage({super.key});
@@ -60,7 +61,7 @@ class getstartpage extends StatelessWidget {
                   height: 20,
                 ),
                 appbutton(onpressed:(){
-                  Navigator.push(context,MaterialPageRoute(builder: (BuildContext context) => chooseModePage(),));
+                  Navigator.push(context,MaterialPageRoute(builder: (BuildContext context) => choosemode()));
                 }, tittle: "Get Started")
               ],
             ),
