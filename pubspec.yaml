@@ -28,7 +28,7 @@ dev_dependencies:
     sdk: flutter
 
 
-  cupertino_icons: ^1.0.8
+
   flutter_bloc:
   path_provider:
 
