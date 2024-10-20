@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' '';
 import 'package:intl/intl.dart';
+import 'package:listen_music/common/widgets/buttons/app_button.dart';
 import 'package:listen_music/core/configs/themes/app_colors.dart';
 import 'package:listen_music/core/configs/themes/app_theme.dart';
 import 'package:provider/provider.dart';
 
+import '../authentication/pages/signup_page.dart';
 import 'components/wire_draw.dart';
 
 class choosemode extends StatefulWidget {
@@ -40,7 +42,6 @@ class _choosemodeState extends State<choosemode> {
     final Size size = MediaQuery.of(context).size;
     ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
@@ -92,8 +93,8 @@ class _choosemodeState extends State<choosemode> {
                   });
                 },
                 child: Container(
-                  width: size.width * .1,
-                  height: size.width * .1,
+                  width: size.width *.1,
+                  height: size.width *.1,
                   decoration: BoxDecoration(
                       color: themeProvider.themeMode().thumbColor,
                       border: Border.all(
@@ -102,82 +103,108 @@ class _choosemodeState extends State<choosemode> {
                       shape: BoxShape.circle),
                 ),
               ),
-            )
+            ),
+
+            Positioned(
+                bottom: 30,
+                right: 40,
+                child: Container(
+                    height: 60,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: themeProvider.themeMode().switchColor!,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => Signup()));
+                      },
+                      child: Text("Go",
+                          style: TextStyle(
+                              color: themeProvider.themeMode().switchColor!,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
+                    )))
           ],
         ),
       ),
     );
   }
 
-  SafeArea leftside(BuildContext context, Size size, ThemeProvider themeProvider) {
+  SafeArea leftside(
+      BuildContext context, Size size, ThemeProvider themeProvider) {
     return SafeArea(
-              child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Text(DateTime.now().hour.toString(),
-                    style: Theme.of(context).textTheme.displayLarge),
-                SizedBox(
-                    width: size.width * .2,
-                    child: const Divider(
-                      height: 0,
-                      color: Colors.white,
-                      thickness: 1,
-                    )),
-                Text(
-                  DateTime.now().minute.toString(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayLarge!
-                      .copyWith(color: AppColors.white),
-                ),
-                const Spacer(),
-                Text(
-                  "Light Dark\nPersonal\nSwitch",
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-                Container(
-                  width: size.width * .2,
-                  height: size.width * .2,
-                  decoration: BoxDecoration(
-                    color: themeProvider.themeMode().switchColor,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Icon(
-                    Icons.nights_stay_outlined,
-                    size: 50,
-                    color: AppColors.white,
-                  ),
-                ),
-                SizedBox(
-                    width: size.width * .2,
-                    child: const Divider(
-                      height: 0,
-                      color: Colors.white,
-                      thickness: 1,
-                    )),
-                Text(
-                  "30\u00B0C",
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayMedium!
-                      .copyWith(color: AppColors.white),
-                ),
-                Text("Clear", style: Theme.of(context).textTheme.titleLarge),
-                Text(
-                    DateFormat(
-                      "EEEE",
-                    ).format(DateTime.now()),
-                    style: Theme.of(context).textTheme.titleLarge),
-                Text(DateFormat("MMMM d").format(DateTime.now()),
-                    style: Theme.of(context).textTheme.titleLarge)
-              ],
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          Text(DateTime.now().hour.toString(),
+              style: Theme.of(context).textTheme.displayLarge),
+          SizedBox(
+              width: size.width * .2,
+              child: const Divider(
+                height: 0,
+                color: Colors.white,
+                thickness: 1,
+              )),
+          Text(
+            DateTime.now().minute.toString(),
+            style: Theme.of(context)
+                .textTheme
+                .displayLarge!
+                .copyWith(color: AppColors.white),
+          ),
+          const Spacer(),
+          Text(
+            "Light Dark\nPersonal\nSwitch",
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+
+          const Spacer(),
+          Container(
+            width: size.width * .2,
+            height: size.width * .2,
+            decoration: BoxDecoration(
+              color: themeProvider.themeMode().switchColor,
+              borderRadius: BorderRadius.circular(8),
             ),
-          ));
+            child: Icon(
+              Icons.nights_stay_outlined,
+              size: 50,
+              color: AppColors.white,
+            ),
+          ),
+          SizedBox(
+              width: size.width * .2,
+              child: const Divider(
+                height: 0,
+                color: Colors.white,
+                thickness: 1,
+              )),
+          Text(
+            "30\u00B0C",
+            style: Theme.of(context)
+                .textTheme
+                .displayMedium!
+                .copyWith(color: AppColors.white),
+          ),
+          Text("Clear", style: Theme.of(context).textTheme.titleLarge),
+          Text(
+              DateFormat(
+                "EEEE",
+              ).format(DateTime.now()),
+              style: Theme.of(context).textTheme.titleLarge),
+          Text(DateFormat("MMMM d").format(DateTime.now()),
+              style: Theme.of(context).textTheme.titleLarge),
+        ],
+      ),
+    ));
   }
 }
