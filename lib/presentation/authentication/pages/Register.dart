@@ -9,6 +9,9 @@ import 'package:listen_music/common/widgets/Signup_Information/passwords.dart';
 import 'package:listen_music/common/widgets/buttons/app_button.dart';
 import 'package:listen_music/core/configs/assets/app_vector.dart';
 import 'package:listen_music/presentation/authentication/pages/Sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:listen_music/presentation/authentication/services/auth_service.dart';
+
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -16,6 +19,9 @@ class Register extends StatefulWidget {
   @override
   State<Register> createState() => _RegisterState();
 }
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController();
+
 
 class _RegisterState extends State<Register> {
   @override
@@ -42,14 +48,17 @@ class _RegisterState extends State<Register> {
               const SizedBox(
                 height: 25,
               ),
-              const emails(),
+               emails(),
               const SizedBox(
                 height: 25,
               ),
-              const password(),
+               password(),
               SizedBox(height: 35,),
-              appbutton(onpressed: (){}, tittle: "Create Account"),
-              SizedBox(height: 200,),
+              appbutton(onpressed: () async{await Authservice().Sign(email:_emailController.text, password: _passwordController.text);
+
+
+              }, tittle: "Create Account"),
+              SizedBox(height: 180,),
               _sign(context)
 
               

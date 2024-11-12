@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:listen_music/core/configs/themes/app_colors.dart';
 import 'package:listen_music/core/configs/themes/app_theme.dart';
 
@@ -6,8 +7,14 @@ import 'package:listen_music/presentation/splash/pages/splash.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'firebase_options.dart';
+
 
  main()  async{
+   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp(
+     options: DefaultFirebaseOptions.currentPlatform,
+   );
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences pref=await SharedPreferences.getInstance();
   bool isLightTheme=pref.getBool(SPref.islight)?? true;

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "397746096516",
+    "project_id": "music-dc298",
+    "storage_bucket": "music-dc298.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397746096516:android:bac68fac2c5f2097eeb5d1",
+        "android_client_info": {
+          "package_name": "com.example.listen_music"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6hjYKxftCkxc_-yRsTy-oGGzwsssIO4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

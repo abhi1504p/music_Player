@@ -42,11 +42,11 @@ class _SignState extends State<Sign> {
               const SizedBox(
                 height: 25,
               ),
-              const emails(),
+               emails(),
               const SizedBox(
                 height: 25,
               ),
-              const password(),
+               password(),
               SizedBox(height: 45,),
               appbutton(onpressed: (){}, tittle: "Create Account"),
               SizedBox(height: 250,),

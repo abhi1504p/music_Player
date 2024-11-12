@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class password extends StatelessWidget {
-  const password({super.key});
+   password({super.key});
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+        controller: _passwordController,
+
         decoration: InputDecoration(
             hintText: "Password",
 
